@@ -1,7 +1,12 @@
 <?php
+$dbHost = getenv('DB_HOST') ?: 'localhost';
+$dbName = getenv('DB_NAME') ?: 'livreor';
+$dbUser = getenv('DB_USER') ?: 'root';
+$dbPassword = getenv('DB_PASSWORD') ?: '';
+
 // Configuration centrale de la base de données. Ajustez les identifiants si nécessaire.
 try {
-    $db = new PDO('mysql:host=localhost;dbname=livreor', 'root', '');
+    $db = new PDO("mysql:host={$dbHost};dbname={$dbName};charset=utf8mb4", $dbUser, $dbPassword);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     // En production, loggez l'erreur au lieu de l'afficher
