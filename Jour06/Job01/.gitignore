@@ -1,4 +1,4 @@
 node_modules/
 *.log
-# Il manque quelque chose ici 🐛
+# Il manque quelque chose ici 🐛 solution: .env
 .env

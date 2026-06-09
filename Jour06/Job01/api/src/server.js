@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 });
 app.get('/health', (req, res) => res.json({ status: 'ok' }));
 
-// BUG VOLONTAIRE ICI 🐛
-app.listen(PORT, () => {
+// BUG VOLONTAIRE ICI 🐛 solution: '0.0.0.0'
+app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server running on port ${PORT}`);
 });
